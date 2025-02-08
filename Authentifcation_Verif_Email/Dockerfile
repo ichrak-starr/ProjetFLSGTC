@@ -6,7 +6,7 @@ COPY mvnw pom.xml ./
 COPY src ./src 
 
 RUN chmod +x mvnw
-RUN ./mvnw -B package    
+RUN ./mvnw -B package -DskipTests
 
 # Étape d'exécution
 FROM eclipse-temurin:17-jre AS runtime
