@@ -8,7 +8,7 @@ RUN chmod +x mvnw
 RUN ./mvnw -B package    
 
 FROM openjdk:17-jre-slim
-COPY --from=build target/*.jar app.jar
+COPY --from=build /app/target/*.jar app.jar
 EXPOSE 8080
 ENTRYPOINT ["java", "-jar", "app.jar"]
 
