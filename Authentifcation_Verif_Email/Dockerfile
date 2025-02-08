@@ -10,7 +10,6 @@ RUN ./mvnw -B package
 
 # Étape d'exécution
 FROM eclipse-temurin:17-jre AS runtime
-WORKDIR /app
 COPY --from=build /app/target/*.jar app.jar
 EXPOSE 8080
 ENTRYPOINT ["java", "-jar", "app.jar"]
