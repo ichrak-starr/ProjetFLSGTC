@@ -1,6 +1,6 @@
 # Étape de construction
 FROM node:19-alpine AS build
-WORKDIR /usr/src/app
+WORKDIR /app
 
 # Copie des fichiers nécessaires pour l'installation des dépendances
 COPY package.json package-lock.json ./
@@ -20,7 +20,7 @@ RUN chmod -R 755 /usr/share/nginx/html
 COPY nginx.conf /etc/nginx/conf.d/default.conf
 
 # Copier les fichiers construits dans le répertoire Nginx
-COPY --from=build /usr/src/app/dist /usr/share/nginx/html
+COPY --from=build /app/dist /usr/share/nginx/html
 
 # Exposer le port 80
 EXPOSE 80
