@@ -6,5 +6,6 @@ COPY . .
 RUN npm run build
 
 FROM nginx:1.23.2-alpine
+RUN chmod -R 755 /usr/share/nginx/html
 COPY nginx.conf /etc/nginx/conf.d/default.conf
 COPY --from=build /usr/src/app/dist /usr/share/nginx/html
