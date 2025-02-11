@@ -28,7 +28,7 @@ import org.springframework.core.io.Resource;
 import org.springframework.core.io.UrlResource;
 @RestController
 @CrossOrigin("*")
-@RequestMapping("/auth")
+@RequestMapping("/api/auth")
 @RequiredArgsConstructor
 public class AuthenticationController {
     public static String uploadDirectory = System.getProperty("user.dir") + "/uploadUser";
