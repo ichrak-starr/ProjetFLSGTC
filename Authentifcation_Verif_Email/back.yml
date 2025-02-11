@@ -24,6 +24,11 @@ spec:
               value: root
             - name: SPRING_DATASOURCE_PASSWORD
               value: root
+          resources:
+            requests:
+              ephemeral-storage: "500Mi"  # Stockage éphémère minimum alloué
+            limits:
+              ephemeral-storage: "1Gi"
 ---
 apiVersion: v1
 kind: Service
