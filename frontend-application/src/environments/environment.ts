@@ -1,4 +1,4 @@
 export const environment = {
   production: false,
-  baseUrl: 'http://backend-service:8080/api', //a changer par nom de service url de service (ip:32000)
+  baseUrl: 'http://51.44.166.19:30081/api', //a changer par nom de service url de service (ip:32000)
 };
